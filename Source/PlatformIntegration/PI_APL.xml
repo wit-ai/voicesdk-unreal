@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+	<trace enable="true"/>
+	<init>
+		<log text="==VoiceService PlatformIntegration init=="/>		
+	</init>
+
+  <androidManifestUpdates>
+    <addElements tag="application">
+	  <activity android:name="com.oculus.assistant.api.voicesdk.PlatformIntegrationActivity"
+          android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+          android:label="@string/app_name" />
+    </addElements>
+
+	<addElements tag="manifest">
+	  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+	</addElements>
+  </androidManifestUpdates>
+
+	<prebuildCopies>
+		<copyDir src="$S(PluginDir)/java" dst="$S(BuildDir)/src/" />
+	</prebuildCopies>
+
+	<!-- //TODO better to move to mvn repo, example: UnrealEngine/4.27.0/Linux/Engine/Plugins/Online/OnlineSubsystemFacebook/Source/OnlineSubsystemFacebook_UPL.xml line-->
+	<resourceCopies>
+		<copyDir src="$S(PluginDir)/jars" dst="$S(BuildDir)/libs" />
+	</resourceCopies>
+
+	<buildGradleAdditions>
+		<insert>
+			android {
+				compileOptions {
+					sourceCompatibility 1.8
+					targetCompatibility 1.8
+				}
+			}
+		</insert>
+	</buildGradleAdditions>
+
+  <!-- optional additions to proguard -->
+  <proguardAdditions>
+    <insert><![CDATA[
+      -keepattributes Signature
+      -dontskipnonpubliclibraryclassmembers
+
+     -keepclassmembers class com.epicgames.ue4.GameActivity {
+            public <methods>;
+            public <fields>;
+     }
+    ]]></insert>
+  </proguardAdditions>
+
+  <resourceCopies>
+    <!-- Copy the generated resource file to be packaged -->
+  </resourceCopies>
+
+  <AARImports>
+  </AARImports>
+  
+  <!-- optional additions to the GameActivity imports in GameActivity.java -->
+	<gameActivityImportAdditions>
+	  <insert>
+		import java.util.HashSet;
+		import java.util.Arrays;
+		import android.text.TextUtils;
+		import android.graphics.BitmapFactory; 
+		import android.os.Handler; 
+		import com.oculus.assistant.api.voicesdk.immersivevoicecommands.ue.UEIVCHelper;
+		  
+    </insert>
+	</gameActivityImportAdditions>
+	
+
+	<!-- optional additions to the GameActivity class in GameActivity.java -->
+	<gameActivityClassAdditions>
+		<insert>
+		<![CDATA[
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_ActivateVoiceInput(String tag, String token, String clientSDKVersion) {
+			UEIVCHelper.activateVoiceInput(_activity, tag, token, clientSDKVersion);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_ActivateVoiceInputWithRequestOptions(String requestOptions, String tag, String token, String clientSDKVersion) {
+			UEIVCHelper.activateVoiceInput(_activity, requestOptions, tag, token, clientSDKVersion);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_ActivateVoiceInputImmediately(String tag, String token, String clientSDKVersion) {
+			UEIVCHelper.activateVoiceInputImmediately(_activity, tag, token, clientSDKVersion);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_ActivateVoiceInputImmediatelyWithRequestOptions(String requestOptions, String tag, String token, String clientSDKVersion) {
+			UEIVCHelper.activateVoiceInputImmediately(_activity, requestOptions, tag, token, clientSDKVersion);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_DeactivateVoiceInput(String tag) {
+			UEIVCHelper.deactivateVoiceInput(_activity, tag);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_DeactivateAndAbortRequest(String tag) {
+			UEIVCHelper.deactivateAndAbortRequest(_activity, tag);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_SendTranscription(String text, String tag, String token, String clientSDKVersion) {
+			UEIVCHelper.sendTranscription(_activity, text, tag, token, clientSDKVersion);
+		}
+		
+		public void AndroidThunkJava_Oculus_Assistant_VoiceSDK_SendTranscriptionWithRequestOptions(String text, String requestOptions, String tag, String token, String clientSDKVersion) {
+			UEIVCHelper.sendTranscription(_activity, text, requestOptions, tag, token, clientSDKVersion);
+		}
+		
+		public boolean AndroidThunkJava_Oculus_Assistant_VoiceSDK_IsSupported(String tag) {
+			return UEIVCHelper.IsSupported(_activity, tag);
+		}
+		
+		public boolean AndroidThunkJava_Oculus_Assistant_VoiceSDK_IsVoiceInputActive(String tag) {
+			return UEIVCHelper.IsVoiceInputActive(_activity, tag);
+		}
+		
+		public boolean AndroidThunkJava_Oculus_Assistant_VoiceSDK_IsVoiceStreamingActive(String tag) {
+			return UEIVCHelper.IsVoiceStreamingActive(_activity, tag);
+		}
+		
+		public boolean AndroidThunkJava_Oculus_Assistant_VoiceSDK_IsRequestInProgress(String tag) {
+			return UEIVCHelper.IsRequestInProgress(_activity, tag);
+		}
+		
+		]]>
+		</insert>
+	</gameActivityClassAdditions>
+	
+	<!-- optional additions to GameActivity onCreate metadata reading in GameActivity.java -->
+	<gameActivityReadMetadataAdditions>
+	<insert>
+
+  </insert>
+	</gameActivityReadMetadataAdditions>
+	
+	<!-- optional additions to GameActivity onCreate in GameActivity.java -->
+	<gameActivityOnCreateAdditions>
+		<insert>
+		<![CDATA[
+		]]>
+		</insert>
+	</gameActivityOnCreateAdditions>
+
+	<!-- optional additions to GameActivity onDestroy in GameActivity.java -->
+	<gameActivityOnDestroyAdditions>
+		<insert>
+		
+		</insert>
+	</gameActivityOnDestroyAdditions>
+	
+	
+	<!-- optional additions to GameActivity onStart in GameActivity.java -->
+	<gameActivityOnStartAdditions>
+		<insert>
+		
+		</insert>
+	</gameActivityOnStartAdditions>
+
+	<!-- optional additions to GameActivity onStop in GameActivity.java -->
+	<gameActivityOnStopAdditions>
+		<insert>
+		
+		</insert>
+	</gameActivityOnStopAdditions>
+	
+
+	<!-- optional additions to GameActivity onPause in GameActivity.java	-->
+	<gameActivityOnPauseAdditions>
+    <insert>
+    <![CDATA[
+    ]]>
+    </insert>
+  </gameActivityOnPauseAdditions>
+
+
+  <!-- optional additions to GameActivity onResume in GameActivity.java	-->
+  <gameActivityOnResumeAdditions>
+    <insert>
+    </insert>
+  </gameActivityOnResumeAdditions>
+
+
+	<!-- optional additions to GameActivity onActivityResult in GameActivity.java -->
+	<gameActivityOnActivityResultAdditions>
+		<insert>
+		</insert>
+    </gameActivityOnActivityResultAdditions>
+	
+
+	<!-- optional libraries to load in GameActivity.java before libUE4.so -->
+	<soLoadLibrary>
+		<!-- need this if plugin enabled and supported architecture, even if not packaged for GearVR -->
+	</soLoadLibrary>
+</root>

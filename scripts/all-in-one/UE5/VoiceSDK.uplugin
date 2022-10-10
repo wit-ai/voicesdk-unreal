@@ -1,0 +1,49 @@
+{
+  "FileVersion": 3,
+  "Version": 46,
+  "VersionName": "46.0.1",
+  "FriendlyName": "VoiceSDK",
+  "Description": "SDK that enables voice interactions with your app using Wit.ai",
+  "Category": "Voice",
+  "CreatedBy": "Meta Platforms, Inc.",
+  "CreatedByURL": "meta.com",
+  "DocsURL": "https://github.com/wit-ai/voicesdk-unreal/blob/main/README.md",
+  "MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/960815697bc942f19848aec9cf502867",
+  "SupportURL": "https://github.com/wit-ai/voicesdk-unreal/issues",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "SupportedTargetPlatforms": [
+    "Android",
+    "Win64"
+  ],
+  "Modules": [
+    {
+      "Name": "VoiceSDK",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "PlatformIntegration",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "Wit",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "WitEditor",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "AndroidPermission",
+      "Enabled": true
+    }
+  ]
+}
