@@ -25,7 +25,7 @@ AAppVoiceExperience::AAppVoiceExperience()
  */
 void AAppVoiceExperience::BeginPlay()
 {
-	const bool bShouldUsePlatformIntegration = Configuration != nullptr && Configuration->Application.bIsPlatformIntegrationEnabled;
+	const bool bShouldUsePlatformIntegration = Configuration != nullptr && Configuration->Application.Advanced.bIsPlatformIntegrationEnabled;
 		
 	UE_LOG(LogVoiceSDK, Display, TEXT("Init VoiceService: bIsPlatformIntegrationEnabled=%s"), bShouldUsePlatformIntegration ? TEXT("true") : TEXT("false"));
 
