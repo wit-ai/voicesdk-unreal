@@ -28,8 +28,6 @@ bEnabled=True
 * [Voice SDK Online Documentation](https://developer.oculus.com/documentation/unreal/voice-sdk-overview/)
 * [Wit.ai Documentation](https://wit.ai/docs)
     * Voice SDK uses Wit.ai to power its speech recognition, text to speech, and natural language functionality. To learn more about Wit.ai check out the Wit.ai Documentation.
-* [Voice Command Tutorial]()
-* [TTS Tutorial]()
 
 ## License
 The license for `voicesdk-unreal` can be found in [LICENSE](https://github.com/wit-ai/voicesdk-unreal/blob/main/LICENSE) file in the root directory of this source tree.
