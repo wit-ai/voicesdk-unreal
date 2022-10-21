@@ -1,7 +1,7 @@
 # Voice SDK for Unreal Engine
 The Voice SDK enables you to bring voice interactions to your app experiences. Use the Voice SDK to enhance the AR/VR experience with more natural and flexible ways for people to interact with the app. For example, voice commands can shortcut controller actions with a single phrase, or interactive conversation can make the app more engaging.
 
-To learn more about the Voice SDK visit the Oculus Developer docs and read through the [Voice SDK Overview](https://developer.oculus.com/documentation/unity/voice-sdk-overview/)
+To learn more about the Voice SDK visit the Oculus Developer docs and read through the [Voice SDK Overview](https://developer.oculus.com/documentation/unreal/vsdk-overview/)
 
 ## Getting Started
 ### Installation
@@ -50,4 +50,4 @@ The privacy policy for the Wit.ai service can be found at https://wit.ai/privacy
 
 Please see the Voice SDK Overview for additional applicable terms and policies.
 
-https://developer.oculus.com/documentation/unity/voice-sdk-overview
+https://developer.oculus.com/documentation/unreal/voice-sdk-overview
