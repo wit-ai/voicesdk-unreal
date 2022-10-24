@@ -37,5 +37,5 @@ outlined on that page and do not file a public issue.
 * Use camelCase for member variables
 
 ## License
-By contributing to wit-unity, you agree that your contributions will be licensed
+By contributing to voicesdk-unreal, you agree that your contributions will be licensed
 under the LICENSE file in the root directory of this source tree.
