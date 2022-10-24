@@ -25,7 +25,7 @@ bEnabled=True
 ```
 
 ## Documentation
-* [Voice SDK Online Documentation](https://developer.oculus.com/documentation/unreal/voice-sdk-overview/)
+* [Voice SDK Online Documentation](https://developer.oculus.com/documentation/unreal/vsdk-overview/)
 * [Wit.ai Documentation](https://wit.ai/docs)
     * Voice SDK uses Wit.ai to power its speech recognition, text to speech, and natural language functionality. To learn more about Wit.ai check out the Wit.ai Documentation.
 
@@ -48,4 +48,4 @@ The privacy policy for the Wit.ai service can be found at https://wit.ai/privacy
 
 Please see the Voice SDK Overview for additional applicable terms and policies.
 
-https://developer.oculus.com/documentation/unreal/voice-sdk-overview
+https://developer.oculus.com/documentation/unreal/vsdk-overview/
