@@ -19,6 +19,7 @@ git clone https://github.com/wit-ai/voicesdk-unreal
 
 echo ">> 3. add WITH_VOICESDK macro for 'create preset' feature, this can be removed if 2 repos merged."
 node ../update_WITH_VOICESDK_flag.js
+node ../../update_WITH_VOICESDK_USERAGENT_flag.js
 
 echo ">> 4. Copy code and content from wit to voicesdk"
 powershell -Command "cp ./wit-unreal/Source/* ./voicesdk-unreal/Source/ -recurse -force"

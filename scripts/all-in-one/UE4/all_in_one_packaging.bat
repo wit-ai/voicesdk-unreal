@@ -13,6 +13,8 @@ cd workspace
 git clone https://github.com/wit-ai/voicesdk-unreal
 git clone https://github.com/wit-ai/wit-unreal
 
+node ../../update_WITH_VOICESDK_USERAGENT_flag.js
+
 cd voicesdk-unreal
 rmdir /s /q .git
 rmdir /s /q scripts
