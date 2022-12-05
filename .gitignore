@@ -78,3 +78,7 @@ scripts/all-in-one/UE5/workspace
 scripts/all-in-one/UE5/output/*
 scripts/all-in-one/UE4/workspace
 scripts/all-in-one/UE4/output/*
+scripts/all-in-one/UE5_1/workspace
+scripts/all-in-one/UE5_1/output/*
+scripts/all-in-one/github_UE4/workspace
+scripts/all-in-one/github_UE4/output/*
