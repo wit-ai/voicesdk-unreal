@@ -22,6 +22,6 @@ updateFileAsync('..\\VoiceSDK.uplugin', VERSION_KEY_STRING_START,process.argv[2]
   updateFileAsync('..\\VoiceSDK.uplugin', VERSION_NAME_KEY_STRING_START,process.argv[3] , VERSION_NAME_KEY_STRING_END);
 });
 
-updateFileAsync('all-in-one\\UE5\\VoiceSDK.uplugin', VERSION_KEY_STRING_START,process.argv[2] , VERSION_KEY_STRING_END, ()=>{
-  updateFileAsync('all-in-one\\UE5\\VoiceSDK.uplugin', VERSION_NAME_KEY_STRING_START,process.argv[3] , VERSION_NAME_KEY_STRING_END);
+updateFileAsync('all-in-one\\utils\\VoiceSDK.uplugin', VERSION_KEY_STRING_START,process.argv[2] , VERSION_KEY_STRING_END, ()=>{
+  updateFileAsync('all-in-one\\utils\\VoiceSDK.uplugin', VERSION_NAME_KEY_STRING_START,process.argv[3] , VERSION_NAME_KEY_STRING_END);
 });
