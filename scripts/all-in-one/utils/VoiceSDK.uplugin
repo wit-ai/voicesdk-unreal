@@ -22,22 +22,38 @@
     {
       "Name": "VoiceSDK",
       "Type": "Runtime",
-      "LoadingPhase": "Default"
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win64",
+        "Android"
+      ]
     },
     {
       "Name": "PlatformIntegration",
       "Type": "Runtime",
-      "LoadingPhase": "Default"
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win64",
+        "Android"
+      ]
     },
     {
       "Name": "Wit",
       "Type": "Runtime",
-      "LoadingPhase": "Default"
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win64",
+        "Android"
+      ]
     },
     {
       "Name": "WitEditor",
       "Type": "Editor",
-      "LoadingPhase": "PostEngineInit"
+      "LoadingPhase": "PostEngineInit",
+      "WhitelistPlatforms": [
+        "Win64",
+        "Android"
+      ]
     }
   ],
   "Plugins": [

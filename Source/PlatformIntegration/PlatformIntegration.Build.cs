@@ -13,6 +13,8 @@ namespace UnrealBuildTool.Rules
 	{
 		public PlatformIntegration(ReadOnlyTargetRules Target) : base(Target)
 		{
+			PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+
 			PublicIncludePaths.AddRange(
 				new string[] {
 					// ... add public include paths required here ...
@@ -38,7 +40,7 @@ namespace UnrealBuildTool.Rules
 
 			PrivateDependencyModuleNames.AddRange(
 				new string[]
-				{                    
+				{
 					// ... add private dependencies that you statically link with here ...
 				}
 			);
@@ -49,7 +51,7 @@ namespace UnrealBuildTool.Rules
 					// ... add any modules that your module loads dynamically here ...
 				}
 			);
-				
+
 			PrivateIncludePathModuleNames.AddRange(
 				new string[] {
 					"Settings",

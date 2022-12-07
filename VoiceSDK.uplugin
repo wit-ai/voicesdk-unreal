@@ -22,11 +22,19 @@
 		{
 			"Name": "VoiceSDK",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Android"
+			]
 		},{
 			"Name": "PlatformIntegration",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Android"
+			]
 		}
 	],
 	"Plugins": [
