@@ -17,9 +17,9 @@ cd workspace
 
 echo ">> 1. Download wit-unreal"
 git clone https://github.com/wit-ai/wit-unreal
+
 echo ">> 2. Download voicesdk-unreal"
 git clone https://github.com/wit-ai/voicesdk-unreal
-
 
 echo ">> 3. add WITH_VOICESDK macro for 'create preset' feature, this can be removed if 2 repos merged."
 node ../../utils/update_WITH_VOICESDK_flag.js
@@ -33,7 +33,7 @@ powershell -Command "Copy-Item ../../utils/VoiceSDK.uplugin -Destination ./voice
 powershell -Command "Copy-Item ../../utils/Config -Destination ./voicesdk-unreal/ -recurse"
 
 echo ">> 5. Build"
-if "%unrealVersion%"=="4.27" (SET vSVersion="-VS2019")
+if "%unrealVersion%"=="4.27" (SET vSVersion="-VS2019") else (SET vSVersion="")
 
 "C:\Program Files\Epic Games\UE_%unrealVersion%\Engine\Build\BatchFiles\RunUAT.bat" BuildPlugin -Rocket -Plugin="%CD%\voicesdk-unreal\VoiceSDK.uplugin" -TargetPlatforms=Win64 -Package="%CD%\..\output\voicesdk-unreal" %vSVersion% & cd .. & ..\\utils\\zip_all_in_one.bat
 
