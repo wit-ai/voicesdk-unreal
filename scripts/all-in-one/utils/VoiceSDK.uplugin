@@ -51,8 +51,7 @@
       "Type": "Editor",
       "LoadingPhase": "PostEngineInit",
       "WhitelistPlatforms": [
-        "Win64",
-        "Android"
+        "Win64"
       ]
     }
   ],
