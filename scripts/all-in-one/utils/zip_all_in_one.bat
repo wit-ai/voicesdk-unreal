@@ -10,4 +10,4 @@ rmdir /s /q voicesdk-unreal\Binaries
 rmdir /s /q voicesdk-unreal\Intermediate
 powershell Compress-Archive voicesdk-unreal voicesdk-all-in-one.zip
 cd ..
-echo "The Marketplace Unreal VoiceSDK plugin is ready in output/voicesdk-all-in-one.zip"
+echo "The Marketplace Unreal VoiceSDK plugin is ready in output/voicesdk-marketplace.zip"
