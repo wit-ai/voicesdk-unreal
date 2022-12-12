@@ -34,13 +34,14 @@ Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/e
 - Tick the checkbox to enable the plugin (Editor restart is needed)
 
 ### Add Voice to GameEngine.ini
-Add below lines to your game's Config/DefaultEngine.ini
+Add the lines below to your game's Config/DefaultEngine.ini:
 ```
 [Voice]
 bEnabled=True
 ```
+
 ### Download Presets
-TTS Speaker won't work without Presets, but Marketplace doesn't allow plugins to contain contents, so users have to download them from [here](https://github.com/wit-ai/wit-unreal/tree/main/Content/Presets).
+The TTS Speaker won't work without Presets. However since Marketplace doesn't allow plugins to contain content you will need to download the additional content from [here](https://github.com/wit-ai/wit-unreal/tree/main/Content/Presets).
 
 ## Documentation
 * [Voice SDK Online Documentation](https://developer.oculus.com/documentation/unreal/vsdk-overview/)
