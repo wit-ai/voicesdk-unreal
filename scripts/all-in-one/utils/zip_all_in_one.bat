@@ -8,6 +8,6 @@ cd output
 powershell -Command "Copy-Item ../../utils/Config -Destination ./voicesdk-unreal/ -recurse"
 rmdir /s /q voicesdk-unreal\Binaries
 rmdir /s /q voicesdk-unreal\Intermediate
-powershell Compress-Archive voicesdk-unreal voicesdk-all-in-one.zip
+powershell Compress-Archive voicesdk-unreal voicesdk-marketplace.zip
 cd ..
 echo "The Marketplace Unreal VoiceSDK plugin is ready in output/voicesdk-marketplace.zip"
