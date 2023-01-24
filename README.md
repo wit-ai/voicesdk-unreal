@@ -44,7 +44,7 @@ Voice SDK is powered by the Wit.ai Natural Language Understanding (NLU) service,
 If you have done the above steps, Congratulations! You have VoiceSDK integrated with your game! You can now start to build voice experiences into your game. But we highly recommend you checkout our [sample project](https://github.com/wit-ai/voicesdk-unreal-samples) first. It demonstrates all Voice SDK features and best practices.
 
 ## Troubleshooting
-### Marketplace Vice SDK v47.0.3 doesn't have Presets to run TTS
+### Marketplace Voice SDK v47.0.3 doesn't have Presets to run TTS
 The TTS Speaker won't work without Presets. However since Marketplace doesn't allow plugins to contain content you will need to download the additional content from [here](https://github.com/wit-ai/wit-unreal/tree/47.0.3/Content/Presets).
 
 ## Documentation
