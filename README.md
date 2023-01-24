@@ -4,7 +4,7 @@ The Voice SDK enables you to bring voice interactions to your app experiences. U
 To learn more about the Voice SDK visit the Oculus Developer docs and read through the [Voice SDK Overview](https://developer.oculus.com/documentation/unreal/vsdk-overview/)
 
 ## Getting Started
-### Installation
+### 1. Installation
 
 #### Option 1 (1-Click Installation)
 There are several different ways to install Voice SDK, but the easiest way is using our 1-click script (Note: `git` is needed):
@@ -33,14 +33,14 @@ bEnabled=True
 bEnabled=True
 ```
 
-## Wit.ai
+## 2. Creating an app on Wit.ai
 Voice SDK is powered by the Wit.ai Natural Language Understanding (NLU) service, Please follow this [quick start guide](https://wit.ai/docs/quickstart) to create a new Wit app.
 
-## Setting up your Wit Configuration file in Unreal
+## 3. Setting up your Wit Configuration file in Unreal
 - In Wit.ai, go to Management > Settings and copy the Server Access Token.
 - In Unreal Editor go to Menu-> Oculus-> Configuration Editor-> Input a Config file name, paste the copied Server Access Token and-> Click `Create`
 
-## Sample Game
+## 4. Sample Game
 If you have done the above steps, Congratulations! You have VoiceSDK integrated with your game! You can now start to build voice experiences into your game. But we highly recommend you checkout our [sample project](https://github.com/wit-ai/voicesdk-unreal-samples) first. It demonstrates all Voice SDK features and best practices.
 
 ## Troubleshooting
