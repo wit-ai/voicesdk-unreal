@@ -5,43 +5,47 @@ To learn more about the Voice SDK visit the Oculus Developer docs and read throu
 
 ## Getting Started
 ### Installation
-There are two ways to install Voice SDK for Unreal Engine. You can download one of the release packages, or you can clone the individual repositories.
 
-#### Release Package Installation
+#### Option 1 (1-Click Installation)
+There are several different ways to install Voice SDK, but the easiest way is using our 1-click script (Note: `git` is needed):
+
+- Download the 1-click script from [here](/VoiceSDK_1click_install_scripts) and put it into your Unreal project folder and execute the script.
+
+#### Option 2 (Unreal Marketplace)
+1. Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk)
+2. Enable the Plugin
+   - Open your game with Unreal Editor
+   - Settings-> Plugins-> Installed -> Voice -> VoiceSDK
+   - Tick the checkbox to enable the plugin (Editor restart is needed)
+3. Add the lines below to your game's Config/DefaultEngine.ini:
+```
+[Voice]
+bEnabled=True
+```
+4. Restart Unreal Editor.
+
+#### Option 3 (Manual Installation)
 1. Grab the latest release zip from [Releases](https://github.com/wit-ai/voicesdk-unreal/releases/)
-2. Extract the zip in your plugins directory.
-
-#### Git Repo Clone
-1. Change to your Plugins directory
-2. Clone Voice SDK:
-```git clone https://github.com/wit-ai/voicesdk-unreal```
-3. Clone Wit Unreal: ```git clone https://github.com/wit-ai/wit-unreal```
-
-### Add Voice to GameEngine.ini
-Once you have the plugin installed in your plugins directory there's one more step. You need to add a few lines to the Config/DefaultEngine.ini
+2. Extract the zip in your game's `Plugins` directory.
+3. Add the lines below to your game's Config/DefaultEngine.ini:
 ```
 [Voice]
 bEnabled=True
 ```
 
-## For Unreal Marketplace Users
-### Installation
-Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk)
+## Wit.ai
+Voice SDK is powered by the Wit.ai Natural Language Understanding (NLU) service, Please follow this [quick start guide](https://wit.ai/docs/quickstart) to create a new Wit app.
 
-### Enable the Plugin
-- Create a new game
-- Settings-> Plugins-> Installed -> Voice -> VoiceSDK
-- Tick the checkbox to enable the plugin (Editor restart is needed)
+## Setting up your Wit Configuration file in Unreal
+- In Wit.ai, go to Management > Settings and copy the Server Access Token.
+- In Unreal Editor go to Menu-> Oculus-> Configuration Editor-> Input a Config file name, paste the copied Server Access Token and-> Click `Create`
 
-### Add Voice to GameEngine.ini
-Add the lines below to your game's Config/DefaultEngine.ini:
-```
-[Voice]
-bEnabled=True
-```
+## Sample Game
+If you have done the above steps, Congratulations! You have VoiceSDK integrated with your game! You can now start to build voice experiences into your game. But we highly recommend you checkout our [sample project](https://github.com/wit-ai/voicesdk-unreal-samples) first. It demonstrates all Voice SDK features and best practices.
 
-### Download Presets
-The TTS Speaker won't work without Presets. However since Marketplace doesn't allow plugins to contain content you will need to download the additional content from [here](https://github.com/wit-ai/wit-unreal/tree/main/Content/Presets).
+## Troubleshooting
+### Marketplace Vice SDK v47.0.3 doesn't have Presets to run TTS
+The TTS Speaker won't work without Presets. However since Marketplace doesn't allow plugins to contain content you will need to download the additional content from [here](https://github.com/wit-ai/wit-unreal/tree/47.0.3/Content/Presets).
 
 ## Documentation
 * [Voice SDK Online Documentation](https://developer.oculus.com/documentation/unreal/vsdk-overview/)
