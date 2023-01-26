@@ -5,8 +5,9 @@
 
 echo off
 IF "%1"=="" GOTO arg_not_exists
-
+IF "%2"=="" GOTO arg_not_exists
 set unrealVersion=%1
+set pluginFlavour=%2
 
 rmdir /s /q output
 mkdir output
@@ -24,11 +25,14 @@ git clone https://github.com/wit-ai/voicesdk-unreal
 echo ">> 3. add WITH_VOICESDK macro for 'create preset' feature, this can be removed if 2 repos merged."
 node ../../utils/update_WITH_VOICESDK_flag.js
 node ../../utils/update_WITH_VOICESDK_MARKETPLACE_flag.js
+
+echo ">> 3.1 change useragent."
 node ../../update_WITH_VOICESDK_USERAGENT_flag.js
+echo ">> 3.2 change plugin flavour."
+node ../../utils/update_plugin_flavour.js %pluginFlavour%
 
 echo ">> 4. Copy code and content from wit to voicesdk"
 powershell -Command "cp ./wit-unreal/Source/* ./voicesdk-unreal/Source/ -recurse -force"
-powershell -Command "Copy-Item ./wit-unreal/Content -Destination ./voicesdk-unreal/ -recurse -force"
 
 powershell -Command "Copy-Item ../../utils/VoiceSDK.uplugin -Destination ./voicesdk-unreal/"
 powershell -Command "Copy-Item ../../utils/Config -Destination ./voicesdk-unreal/ -recurse"

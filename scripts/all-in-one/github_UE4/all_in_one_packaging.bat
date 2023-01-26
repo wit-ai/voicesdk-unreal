@@ -14,6 +14,7 @@ git clone https://github.com/wit-ai/voicesdk-unreal
 git clone https://github.com/wit-ai/wit-unreal
 
 node ../../update_WITH_VOICESDK_USERAGENT_flag.js
+node ../../utils/update_plugin_flavour.js aio
 
 cd voicesdk-unreal
 rmdir /s /q .git
