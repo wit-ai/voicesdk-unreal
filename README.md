@@ -6,28 +6,36 @@ To learn more about the Voice SDK visit the Oculus Developer docs and read throu
 ## Getting Started
 ### 1. Installation
 
-#### Option 1 (1-Click Installation)
-There are several different ways to install Voice SDK, but the easiest way is using our 1-click script (Note: `git` is needed):
+#### Option 1 (Voice SDK enabled project template) :gem: Recommended :gem:
+1. Download the Voice SDK enabled project template from [here](https://github.com/wit-ai/voicesdk-unreal/releases/latest/download/TP_VoiceSDK.zip)
+2. Unzip it and copy to `C:\Program Files\Epic Games\UE_[version]\Templates`
+3. Create a new project as normal but select Game>"Voice SDK enabled"
 
-- Download the 1-click script from [here](/VoiceSDK_1click_install_scripts) and put it into your Unreal project folder and execute the script.
+#### Option 2 (1-Click Installation) :gem: Recommended :gem:
+Note: `git` is needed
 
-#### Option 2 (Unreal Marketplace)
+1. Create a new Unreal project.
+2. Download the 1-click script from [here](/VoiceSDK_1click_install_scripts) and put it into your Unreal project folder and execute the script.
+
+#### Option 3 (Unreal Marketplace)
 1. Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk)
-2. Enable the Plugin
+2. Create a new Unreal project.
+3. Enable the Plugin
    - Open your game with Unreal Editor
    - Settings-> Plugins-> Installed -> Voice -> VoiceSDK
    - Tick the checkbox to enable the plugin (Editor restart is needed)
-3. Add the lines below to your game's Config/DefaultEngine.ini:
+4. Add the lines below to your game's Config/DefaultEngine.ini:
 ```
 [Voice]
 bEnabled=True
 ```
-4. Restart Unreal Editor.
+5. Save and restart Unreal Editor.
 
-#### Option 3 (Manual Installation)
-1. Grab the latest release zip from [Releases](https://github.com/wit-ai/voicesdk-unreal/releases/)
-2. Extract the zip in your game's `Plugins` directory.
-3. Add the lines below to your game's Config/DefaultEngine.ini:
+#### Option 4 (Manual Installation)
+1. Create a new Unreal project.
+2. Grab the latest release zip from [Releases](https://github.com/wit-ai/voicesdk-unreal/releases/)
+3. Extract the zip in your game's `Plugins` directory.
+4. Add the lines below to your game's Config/DefaultEngine.ini:
 ```
 [Voice]
 bEnabled=True
