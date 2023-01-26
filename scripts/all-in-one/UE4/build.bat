@@ -5,4 +5,4 @@
 
 echo off
 
-../utils/all_in_one_packaging.bat 4.27
+../utils/all_in_one_packaging.bat 4.27 MP

@@ -5,4 +5,4 @@
 
 echo off
 
-../utils/all_in_one_packaging.bat 5.0 MP
+../utils/all_in_one_packaging.bat 4.27 TP
