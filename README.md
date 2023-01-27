@@ -14,12 +14,12 @@ To learn more about the Voice SDK visit the Oculus Developer docs and read throu
 #### Option 2 (1-Click Installation) :gem: Recommended :gem:
 Note: `git` is needed
 
-1. Create a new Unreal project.
+1. Create a new Unreal project(or open your existing Unreal project).
 2. Download the 1-click script from [here](/VoiceSDK_1click_install_scripts) and put it into your Unreal project folder and execute the script.
 
 #### Option 3 (Unreal Marketplace)
 1. Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk)
-2. Create a new Unreal project.
+2. Create a new Unreal project(or open your existing Unreal project).
 3. Enable the Plugin
    - Open your game with Unreal Editor
    - Settings-> Plugins-> Installed -> Voice -> VoiceSDK
@@ -32,7 +32,7 @@ bEnabled=True
 5. Save and restart Unreal Editor.
 
 #### Option 4 (Manual Installation)
-1. Create a new Unreal project.
+1. Create a new Unreal project(or use your existing Unreal project).
 2. Grab the latest release zip from [Releases](https://github.com/wit-ai/voicesdk-unreal/releases/)
 3. Extract the zip in your game's `Plugins` directory.
 4. Add the lines below to your game's Config/DefaultEngine.ini:
