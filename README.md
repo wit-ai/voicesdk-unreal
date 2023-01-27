@@ -15,7 +15,7 @@ To learn more about the Voice SDK visit the Oculus Developer docs and read throu
 Note: `git` is needed
 
 1. Create a new Unreal project(or open your existing Unreal project).
-2. Download the 1-click script from [here](/VoiceSDK_1click_install_scripts) and put it into your Unreal project folder and execute the script.
+2. Download the 1-click script from [here](https://github.com/wit-ai/voicesdk-unreal/releases/download/v49.0.1/install_VoiceSDK.bat) and put it into your Unreal project folder and execute the script.
 
 #### Option 3 (Unreal Marketplace)
 1. Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk)
