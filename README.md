@@ -7,29 +7,35 @@ To learn more about the Voice SDK visit the Oculus Developer docs and read throu
 ### 1. Installation
 
 #### Option 1 (Voice SDK enabled project template) :gem: Recommended :gem:
-1. Download the Voice SDK enabled project template from [here](https://github.com/wit-ai/voicesdk-unreal/releases/latest/download/TP_VoiceSDK.zip)
-2. Unzip it and copy to `C:\Program Files\Epic Games\UE_[version]\Templates`
-3. Create a new project as normal but select Game>"Voice SDK enabled"
+1. Download the Voice SDK enabled project template from [here](https://github.com/wit-ai/voicesdk-unreal/releases/latest/download/TP_VoiceSDK.zip).
+2. Unzip it and copy to `C:\Program Files\Epic Games\UE_[version]\Templates`.
+3. Create a new project as normal but select Game>"Voice SDK enabled".
+
+    !["Project template"](readme_images/install_option_1_project_template.gif)
 
 #### Option 2 (1-Click Installation) :gem: Recommended :gem:
-Note: `git` is needed
+**Note:** [git](https://git-scm.com/download/win) is needed.
 
 1. Create a new Unreal project(or open your existing Unreal project).
 2. Download the 1-click script from [here](https://github.com/wit-ai/voicesdk-unreal/releases/download/v49.0.1/install_VoiceSDK.bat) and put it into your Unreal project folder and execute the script.
 
+    !["1-click script"](readme_images/install_option_2_one_click.gif)
+
 #### Option 3 (Unreal Marketplace)
-1. Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk)
+1. Install the plugin from [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/voice-sdk).
 2. Create a new Unreal project(or open your existing Unreal project).
-3. Enable the Plugin
-   - Open your game with Unreal Editor
-   - Settings-> Plugins-> Installed -> Voice -> VoiceSDK
-   - Tick the checkbox to enable the plugin (Editor restart is needed)
+3. Enable the Plugin.
+   - Open your game with Unreal Editor.
+   - Settings-> Plugins-> Installed -> Voice -> VoiceSDK.
+   - Tick the checkbox to enable the plugin (Editor restart is needed).
 4. Add the lines below to your game's Config/DefaultEngine.ini:
 ```
 [Voice]
 bEnabled=True
 ```
 5. Save and restart Unreal Editor.
+
+    !["Marketplace"](readme_images/install_option_3_marketplace.gif)
 
 #### Option 4 (Manual Installation)
 1. Create a new Unreal project(or use your existing Unreal project).
