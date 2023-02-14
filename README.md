@@ -3,6 +3,14 @@ The Voice SDK enables you to bring voice interactions to your app experiences. U
 
 To learn more about the Voice SDK visit the Oculus Developer docs and read through the [Voice SDK Overview](https://developer.oculus.com/documentation/unreal/vsdk-overview/)
 
+Last but not the least, please see what voice enabled experiences that developers have been building with Voice SDK for more inspiration, [Video](https://youtu.be/afVWl5Mfn3g?list=PLb0IAmt7-GS0ewY4fQBij5X_LvS5Wc4kv&t=58) and we are so pleased to invite you to watch Unreal Voice SDK on Meta Connect 2022. [Video](https://youtu.be/afVWl5Mfn3g?list=PLb0IAmt7-GS0ewY4fQBij5X_LvS5Wc4kv&t=372)
+
+
+## Features:
+ 1. Voice Command with free ASR (Automatic Speech Recognition), NLU (Natural Language Processing).
+ 2. TTS (Text to speech)
+ 3. Dictation **[New!]** :tada:
+
 ## Getting Started
 ### 1. Installation
 
