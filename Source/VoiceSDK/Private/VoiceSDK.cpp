@@ -6,20 +6,53 @@
  */
 
 #include "VoiceSDK.h"
+#include "Interfaces/IPluginManager.h"
+#include "Wit/Utilities/WitHelperUtilities.h"
 
 #define LOCTEXT_NAMESPACE "FVoiceSDKModule"
 
+IMPLEMENT_MODULE(FVoiceSDKModule, VoiceSDK)
+
+const FString FVoiceSDKModule::Name = "VoiceSDK";
+
+FVoiceSDKModule* FVoiceSDKModule::Singleton = nullptr;
+
 void FVoiceSDKModule::StartupModule()
 {
-	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
+	Singleton = this;
+
+	// find version code
+	IPluginManager& PluginManager = IPluginManager::Get();
+	TArray<TSharedRef<IPlugin>> Plugins = PluginManager.GetDiscoveredPlugins();
+	for (const TSharedRef<IPlugin>& Plugin : Plugins)
+	{
+		if (Plugin->GetName() == Name)
+		{
+			const FPluginDescriptor& Descriptor = Plugin->GetDescriptor();
+			Version = Descriptor.VersionName;
+
+			const FString VersionCode = FString::Printf(TEXT("voicesdk-unreal-%s"), *Version);
+			FWitHelperUtilities::AddRequestUserData(VersionCode, true);
+			break;
+		}
+	}
 }
 
 void FVoiceSDKModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
+	Singleton = nullptr;
+}
+
+VOICESDK_API FVoiceSDKModule& FVoiceSDKModule::Get()
+{
+	if (Singleton == nullptr)
+	{
+		check(IsInGameThread());
+		FModuleManager::LoadModuleChecked<FVoiceSDKModule>(*Name);
+	}
+
+	check(Singleton != nullptr);
+	return *Singleton;
 }
 
 #undef LOCTEXT_NAMESPACE
-
-IMPLEMENT_MODULE(FVoiceSDKModule, VoiceSDK)

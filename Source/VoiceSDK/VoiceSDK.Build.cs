@@ -45,6 +45,7 @@ public class VoiceSDK : ModuleRules
 			{
 				"CoreUObject",
 				"Engine",
+				"Projects",
 				"Slate",
 				"SlateCore",
 				"Wit",
