@@ -6,7 +6,7 @@
  */
 
 var fs = require('fs');
-const updateFileAsync = require("../../helper");
+const updateFileAsync = require("../../updateFileAsync");
 
 const FILE_PATH = 'wit-unreal\\Source\\WitEditor\\WitEditor.Build.cs';
 const KEY_STRING_START = 'PrivateDefinitions.Add("WITH_VOICESDK_MARKETPLACE=';

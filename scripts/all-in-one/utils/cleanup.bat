@@ -5,4 +5,5 @@
 
 echo off
 
-../utils/all_in_one_packaging.bat 4.27
+if exist output\ rmdir /s /q output
+if exist workspace\ rmdir /s /q workspace
