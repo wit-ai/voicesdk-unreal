@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const updateFileAsync = require("./helper");
+const updateFileAsync = require("./updateFileAsync");
 
 const VERSION_KEY_STRING_START = '"Version": ';
 const VERSION_KEY_STRING_END = ',';
