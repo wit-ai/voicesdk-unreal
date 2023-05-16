@@ -3,6 +3,9 @@
 :: This source code is licensed under the license found in the
 :: LICENSE file in the root directory of this source tree.
 
+IF "%1"=="" (SET witBranch="main") else (SET witBranch=%1)
+IF "%2"=="" (SET vsdkBranch=%witBranch%) else (SET vsdkBranch=%2)
+
 if exist output\ rmdir /s /q output
 mkdir output
 
@@ -15,10 +18,12 @@ git clone -c core.longpaths=true https://github.com/wit-ai/voicesdk-unreal
 git clone -c core.longpaths=true https://github.com/wit-ai/wit-unreal
 
 cd voicesdk-unreal
+git checkout -b build origin/%vsdkBranch%
 rmdir /s /q .git
 rmdir /s /q scripts
 
 cd ..\wit-unreal
+git checkout -b build origin/%witBranch%
 rmdir /s /q .git
 rmdir /s /q scripts
 
