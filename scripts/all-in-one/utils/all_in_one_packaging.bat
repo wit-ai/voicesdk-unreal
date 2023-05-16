@@ -7,6 +7,9 @@ echo off
 IF "%1"=="" GOTO arg_not_exists
 set unrealVersion=%1
 
+IF "%2"=="" (SET witBranch="main") else (SET witBranch=%2)
+IF "%3"=="" (SET vsdkBranch=%witBranch%) else (SET vsdkBranch=%3)
+
 if exist output\ rmdir /s /q output
 mkdir output
 
@@ -18,15 +21,23 @@ cd workspace
 echo ">> 1. Download wit-unreal"
 git clone -c core.longpaths=true https://github.com/wit-ai/wit-unreal
 
+cd wit-unreal
+git checkout -b build origin/%witBranch%
+cd ..
+
 echo ">> 2. Download voicesdk-unreal"
 git clone -c core.longpaths=true https://github.com/wit-ai/voicesdk-unreal
+
+cd voicesdk-unreal
+git checkout -b build origin/%vsdkBranch%
+cd ..
 
 echo ">> 3. add WITH_VOICESDK macro for 'create preset' feature, this can be removed if 2 repos merged."
 node ../../utils/update_WITH_VOICESDK_flag.js
 node ../../utils/update_WITH_VOICESDK_MARKETPLACE_flag.js
 
 echo ">> 4. Copy code and content from wit to voicesdk"
-powershell -Command "cp ./wit-unreal/Source/* ./voicesdk-unreal/Source/ -recurse -force"
+powershell -Command "Copy-Item ./wit-unreal/Source/* ./voicesdk-unreal/Source/ -recurse -force"
 
 powershell -Command "Copy-Item ../../utils/VoiceSDK.uplugin -Destination ./voicesdk-unreal/"
 powershell -Command "Copy-Item ../../utils/Config -Destination ./voicesdk-unreal/ -recurse"
@@ -38,7 +49,7 @@ set currDir=%CD%
 
 cd "C:\Program Files\Epic Games\UE_%unrealVersion%\Engine\Build\BatchFiles"
 
-call "RunUAT.bat" BuildPlugin -Rocket -Plugin="%currDir%\voicesdk-unreal\VoiceSDK.uplugin" -TargetPlatforms=Win64 -Package="%currDir%\..\output\voicesdk-unreal" %vSVersion%
+call "RunUAT.bat" BuildPlugin -Rocket -clean -Plugin="%currDir%\voicesdk-unreal\VoiceSDK.uplugin" -TargetPlatforms=Win64 -package="%currDir%\..\output\voicesdk-unreal" %vSVersion%
 
 if %ERRORLEVEL% neq 0 goto:eof
 

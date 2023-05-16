@@ -5,4 +5,7 @@
 
 echo off
 
-../utils/all_in_one_packaging.bat 4.27
+SET witBranch=%1
+SET vsdkBranch=%2
+
+../utils/all_in_one_packaging.bat 4.27 %witBranch% %vsdkBranch%

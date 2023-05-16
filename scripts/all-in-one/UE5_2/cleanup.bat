@@ -5,7 +5,4 @@
 
 echo off
 
-SET witBranch=%1
-SET vsdkBranch=%2
-
-../utils/all_in_one_packaging.bat 5.1 %witBranch% %vsdkBranch%
+../utils/cleanup.bat
