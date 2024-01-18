@@ -329,7 +329,10 @@ void UPlatformVoiceService::OnSpeechRequestProgress(const TSharedPtr<FJsonObject
 
 	if (Events != nullptr)
 	{
-		Events->OnPartialTranscription.Broadcast(PartialTranscription);
+		FFunctionGraphTask::CreateAndDispatchWhenReady([this, PartialTranscription]()
+		{
+			Events->OnPartialTranscription.Broadcast(PartialTranscription);
+		}, TStatId(), nullptr, ENamedThreads::GameThread);
 	}
 }
 
@@ -380,8 +383,11 @@ void UPlatformVoiceService::OnSpeechRequestComplete(const TSharedPtr<FJsonObject
 			   Trait.Value.Confidence);
 	}
 
-	Events->OnFullTranscription.Broadcast(Events->WitResponse.Text);
-	Events->OnWitResponse.Broadcast(true, Events->WitResponse);
+	FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
+	{
+			Events->OnFullTranscription.Broadcast(Events->WitResponse.Text);
+			Events->OnWitResponse.Broadcast(true, Events->WitResponse);
+	}, TStatId(), nullptr, ENamedThreads::GameThread);
 }
 
 void UPlatformVoiceService::OnRequestError(const FString ErrorMessage, const FString HumanReadableErrorMessage)
