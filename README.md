@@ -7,9 +7,10 @@ Last but not the least, please see what voice enabled experiences that developer
 
 
 ## Features:
- - Voice Command with free ASR (Automatic Speech Recognition), NLU (Natural Language Understanding).
- - TTS (Text To Speech) with ability to live stream audio and queue requests
- - Dictation
+ 1. Voice Command with free ASR (Automatic Speech Recognition) and NLU (Natural Language Understanding)
+ 2. TTS (Text to speech)
+ 3. Dictation
+ 4. High quality voice experience with low latency, with real-time transcription
 
 ## Getting Started
 ### 1. Installation

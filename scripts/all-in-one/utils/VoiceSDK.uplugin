@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
-  "Version": 62,
-  "VersionName": "62.0.0",
+  "Version": 63,
+  "VersionName": "63.0.0",
   "FriendlyName": "VoiceSDK",
   "Description": "SDK that enables voice interactions with your app using Wit.ai",
   "Category": "Voice",
