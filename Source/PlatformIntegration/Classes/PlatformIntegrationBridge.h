@@ -7,6 +7,9 @@
 
 #pragma once
 
+#ifndef PLATFORM_ANDROID
+#define PLATFORM_ANDROID 0
+#endif
 #if PLATFORM_ANDROID
 #include <jni.h>
 #include "Android/AndroidJNI.h"
