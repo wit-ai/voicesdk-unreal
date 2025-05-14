@@ -322,7 +322,7 @@ void UPlatformVoiceService::OnSpeechRequestProgress(const TSharedPtr<FJsonObject
 	// The text field of the final response chunk represents the most recent transcription that Wit.ai was able to discern. We pass this to the user
 	// registered callback as it can be used to display intermediate partial transcriptions which make the application feel more responsive
 	//
-	const FString PartialTranscription = PartialJsonResponse->GetStringField("text");
+	const FString PartialTranscription = PartialJsonResponse->GetStringField(TEXT("text"));
 
 	UE_LOG(LogVoiceSDK, Display, TEXT("PlatformIntegration VoiceService OnSpeechRequestProgress = %s"),
 		   *PartialTranscription);

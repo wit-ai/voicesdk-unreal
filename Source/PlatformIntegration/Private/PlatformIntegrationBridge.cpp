@@ -279,7 +279,7 @@ extern "C"
 			return;
 		}
 		
-		const bool bIsValidPartialTranscription = Json->HasField("text");
+		const bool bIsValidPartialTranscription = Json->HasField(TEXT("text"));
 		if (!bIsValidPartialTranscription)
 		{
 			return;
@@ -306,7 +306,7 @@ extern "C"
 			return;
 		}
 		
-		const bool bIsValidPartialTranscription = Json->HasField("text");
+		const bool bIsValidPartialTranscription = Json->HasField(TEXT("text"));
 		if (!bIsValidPartialTranscription)
 		{
 			return;
